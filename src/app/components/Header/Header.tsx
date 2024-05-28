@@ -15,7 +15,7 @@ const Headar = () => {
                     </li>
                     <li>
                         <Link href="#footer">
-                            カテゴリー
+                            キーワード
                         </Link>
                     </li>
                 </ul>
