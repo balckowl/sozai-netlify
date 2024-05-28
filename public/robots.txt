@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://soz-ai.com/
+
+# Sitemaps
+Sitemap: https://soz-ai.com/sitemap.xml
