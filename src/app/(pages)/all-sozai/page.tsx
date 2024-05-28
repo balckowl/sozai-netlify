@@ -32,7 +32,7 @@ const AllSozai = async ({ searchParams }: { searchParams: { page: string } }) =>
 
     return (
         <div>
-            <SozaiList title="SOZAI一覧" contents={Sozaies.contents} />
+            <SozaiList title="素材一覧" contents={Sozaies.contents} />
             <Pagination currentPage={page} totalCount={Sozaies.totalCount} limit={limit}/>
         </div>
     )
