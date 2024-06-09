@@ -14,7 +14,7 @@ const SozaiCard = ({ src, name, href, requestedBy }: { src: string, name: string
                 <p className="text-[12px] text-muted-foreground mb-[5px]">Requested by {requestedBy}</p>
             )}
             <div className="flex items-center justify-between">
-                <p className="text-[16px]">{name}</p>
+                <p className="text-[14px] sm:text-[16px]">{name}</p>
             </div>
         </div>
     )
