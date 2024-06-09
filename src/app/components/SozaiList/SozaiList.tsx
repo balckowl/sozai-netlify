@@ -29,9 +29,9 @@ const SozaiList = (
                     {/* <Tag /> */}
                     <p>{title}</p>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-[10px] md:gap-[70px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-[30px] md:gap-[70px]">
                     {contents?.map((sozai: any) => (
-                        <SozaiCard src={sozai.material.url} name={sozai.name} href={sozai.id} key={sozai.id} />
+                        <SozaiCard src={sozai.material.url} name={sozai.name} href={sozai.id} key={sozai.id} requestedBy={sozai.requestedBy}/>
                     ))}
                 </div>
                 {contents?.length == 0 && <div className="bg-[#fdf5ef] py-[6px] px-[6px] text-[15px]">このページにSOZAIはありません。</div>}

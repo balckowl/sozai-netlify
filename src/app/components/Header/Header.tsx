@@ -23,6 +23,10 @@ const Headar = () => {
                         <ModeToggle />
                     </li>
                 </ul>
+
+                <div className="md:hidden">
+                    <ModeToggle />
+                </div>
             </div>
         </div>
     )
