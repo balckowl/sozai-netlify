@@ -12,6 +12,7 @@ export type Sozai = {
     material: MicroCMSImage;
     tags: Tag[];
     category: Category[];
+    requestedBy: string;
 } & MicroCMSDate;
 
 //タグの型定義

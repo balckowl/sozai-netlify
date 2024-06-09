@@ -34,8 +34,8 @@ const DownloadBtn = ({ url, name }: { url: string, name: string }) => {
     return (
         <div className="order-2 sm:order-3 col-span-1 row-span-1 flex justify-center gap-3 flex-wrap items-center xl:px-[50px]">
             {['png', 'jpg', 'webp'].map((ext) => (
-                <div key={ext} className="border-[2px] rounded-lg">
-                    <Button variant="secondary" className="py-[30px] px-[45px] rounded-lg flex gap-2 items-center justify-center w-full" onClick={() => downloadImage(ext)}>
+                <div key={ext} className="border-[2px] rounded-lg flex-1">
+                    <Button variant="secondary" className="py-[30px] px-[45px] rounded-lg w-full" onClick={() => downloadImage(ext)}>
                         <p className="text-[15px]">{ext.toUpperCase()}</p>
                     </Button>
                 </div>
