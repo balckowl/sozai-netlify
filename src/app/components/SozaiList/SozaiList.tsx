@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react"
 import SozaiCard from "../SozaiCard/SozaiCard"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from "../ui/breadcrumb"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from "../../components/ui/breadcrumb"
 
 const SozaiList = (
     { title, contents, isHome = false }:
@@ -8,7 +8,7 @@ const SozaiList = (
 ) => {
 
     return (
-        <div className="bg-white">
+        <div>
             <div className="w-[95%] md:w-[85%] mx-auto py-[50px] md:py-[70px] px-[15px]">
                 {!isHome && <div className="mb-[5px]">
                     <Breadcrumb

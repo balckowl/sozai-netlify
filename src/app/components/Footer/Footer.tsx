@@ -26,7 +26,7 @@ const Footer = async () => {
                         <Image src="/banner2.png" width={400} height={300} alt="" className="w-full rounded-[10px]" />
                     </div>
                 </Link>
-                <div className="border-t-[1px] border-[#eee] py-[20px] flex justify-between flex-col md:flex-row gap-[50px]">
+                <div className="border-t-[1px] py-[20px] flex justify-between flex-col md:flex-row gap-[50px]">
                     <div className="flex gap-2 flex-wrap">
                         <Link href="/guide" className="text-[12px] hover:underline">利用規約</Link>
                         <Link href="/private-policy" className="text-[12px] hover:underline">プライバシーポリシー</Link>

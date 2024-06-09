@@ -1,7 +1,7 @@
 import CategoryList from "../CategoryList/CategoryList"
 import TagList from "../TagList/TagList"
 import { ChevronRight } from "lucide-react"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../ui/breadcrumb"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../../components/ui/breadcrumb"
 
 const SozaiHeader = ({ name, category, tags, id }: { name: string, category: any, tags: any, id: string }) => {
 
