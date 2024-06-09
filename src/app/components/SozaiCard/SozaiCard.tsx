@@ -6,7 +6,7 @@ const SozaiCard = ({ src, name, href }: { src: string, name: string, href: strin
     return (
         <div className="col-span-1">
             <Link href={`/sozai/${href}`}>
-                <div className="border-2 p-[30px] rounded-[10px] mb-[10px] bg-gray-50">
+                <div className="border-2 p-[30px] rounded-[10px] mb-[10px] bg-muted">
                     <Image src={src} width={500} height={500} alt="cat" className="w-full" fetchPriority="high" />
                 </div>
             </Link>

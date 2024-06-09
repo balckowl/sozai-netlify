@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -36,53 +37,53 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
 
     return (
         <div>
-            <div className="sm:flex justify-center items-center pb-[50px] md:pb-[100px] gap-3 bg-white hidden">
+            <div className="sm:flex justify-center items-center pb-[50px] md:pb-[100px] gap-3 hidden">
                 {currentPage > 1 && (
                     <Link href={`?page=${currentPage - 1}`}>
-                        <button className="bg-black text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
+                        <Button className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
                             <ArrowLeft />
-                        </button>
+                        </Button>
                     </Link>
                 )}
                 {pageNumbers.map((page, index) =>
                     page === '...' ? (
-                        <span key={index} className="text-black">
+                        <span key={index} className="bg-muted">
                             ...
                         </span>
                     ) : (
                         <Link href={`?page=${page}`} key={index}>
-                            <button
-                                className={`w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center ${page === currentPage ? 'bg-gray-700 text-white' : 'bg-black text-white'
+                            <Button
+                                className={`w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center ${page === currentPage ? 'bg-gray-700 text-white' : ''
                                     }`}
                             >
                                 {page}
-                            </button>
+                            </Button>
                         </Link>
                     )
                 )}
                 {currentPage < totalPages && (
                     <Link href={`?page=${currentPage + 1}`}>
-                        <button className="bg-black text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
+                        <Button className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
                             <ArrowRight />
-                        </button>
+                        </Button>
                     </Link>
                 )}
             </div>
 
-            <div className="flex justify-center items-center pb-[100px] gap-5 bg-white sm:hidden">
+            <div className="flex justify-center items-center pb-[100px] gap-5 sm:hidden">
                 {currentPage > 1 && (
                     <Link href={`?page=${currentPage - 1}`}>
-                        <button className="bg-black text-white w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
+                        <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
                             <ArrowLeft size={20}/>
-                        </button>
+                        </Button>
                     </Link>
                 )}
                 {currentPage > 1 && (<div>{currentPage} / {totalPages}</div>)}
                 {currentPage < totalPages && (
                     <Link href={`?page=${currentPage + 1}`}>
-                        <button className="bg-black text-white w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
+                        <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
                             <ArrowRight size={20}/>
-                        </button>
+                        </Button>
                     </Link>
                 )}
             </div>

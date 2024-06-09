@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/mode-toggle"
 import Link from "next/link"
 
 const Headar = () => {
@@ -17,6 +18,9 @@ const Headar = () => {
                         <Link href="#footer">
                             キーワード
                         </Link>
+                    </li>
+                    <li>
+                        <ModeToggle />
                     </li>
                 </ul>
             </div>
