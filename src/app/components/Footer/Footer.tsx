@@ -10,7 +10,7 @@ const Footer = async () => {
 
     return (
         <div id="footer">
-            <div className="w-[85%] mx-auto py-[50px] md:pt-[50px] md:pb-[100px] border-t-[1px]">
+            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:pt-[50px] md:pb-[100px] border-t-[1px]">
                 <h2 className="font-bold text-[20px] md:text-[25px] mb-[30px]">キーワードから探す</h2>
                 <div className="mb-[30px]">
                     <CategorList contents={Categories} />

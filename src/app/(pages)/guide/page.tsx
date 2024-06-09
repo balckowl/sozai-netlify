@@ -4,11 +4,11 @@ import { ChevronRight } from "lucide-react"
 const page = () => {
     return (
         <div>
-            <div className="w-[95%] md:w-[85%] mx-auto px-[15px] py-[70px]">
+            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:py-[70px]">
                 <Breadcrumb
                     separator={<ChevronRight size={15} />}
                 >
-                    <BreadcrumbList className="text-[12px]">
+                    <BreadcrumbList className="text-[10px] sm:text-[12px]">
                         <BreadcrumbItem>
                             <BreadcrumbLink href="/">ホーム</BreadcrumbLink>
                         </BreadcrumbItem>
@@ -18,10 +18,10 @@ const page = () => {
                         </BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>
-                <h2 className="font-bold text-[25px] sm:text-[30px] mb-[30px] flex items-center gap-2">利用規約</h2>
+                <h2 className="font-bold text-[22px] sm:text-[30px] mb-[30px] flex items-center gap-2">利用規約</h2>
 
                 <div className="mb-[50px]">
-                    <h3 className="text-[20px] font-bold mb-[5px] text-[#aaa]">ご利用について</h3>
+                    <h3 className="text-[18px] font-bold mb-[5px] text-[#aaa]">ご利用について</h3>
                     <div className="bg-muted px-[20px] md:px-[35px] py-[20px] md:py-[30px] rounded-[5px]">
                         <p className="text-[13px] md:text-[16px]">「SOZAI」で配布しているイラスト素材は、コラボイラスト素材を除き、規約の範囲内であれば個人･法人･商用･非商用を問わず無料でご利用いただけます。常識の範囲でご自由にお使いください。</p>
                     </div>
@@ -42,7 +42,7 @@ const page = () => {
                 </div>
 
                 <div className="mb-[50px]">
-                    <h3 className="text-[20px] font-bold mb-[5px] text-[#aaa]">編集・加工について</h3>
+                    <h3 className="text-[18px] font-bold mb-[5px] text-[#aaa]">編集・加工について</h3>
                     <div className="flex flex-col gap-5">
                         <div className="bg-muted px-[20px] md:px-[35px] py-[20px] md:py-[30px] rounded-[5px]">
                             <h3 className="text-[18px] md:text-[20px] font-bold mb-[10px]">OKな例</h3>
@@ -56,15 +56,15 @@ const page = () => {
                 </div>
 
                 <div className="mb-[50px]">
-                    <h3 className="text-[20px] font-bold mb-[5px] text-[#aaa]">著作権</h3>
-                    <div className="bg-muted px-[35px] py-[30px] rounded-[5px]">
+                    <h3 className="text-[18px] font-bold mb-[5px] text-[#aaa]">著作権</h3>
+                    <div className="bg-muted px-[20px] md:px-[35px] py-[20px] md:py-[30px] rounded-[5px]">
                         <p className="text-[13px] md:text-[16px]">編集・加工の有無に関わらず、全ての著作権は「SOZAI」が所有しています。クラウドソーシングやクライアントワークなどで著作権の譲渡が必要となる場合はご利用になれませんので、ご注意ください。</p>
                     </div>
                 </div>
 
-                <div className="mb-[50px]">
-                    <h3 className="text-[20px] font-bold mb-[5px] text-[#aaa]">免責事項</h3>
-                    <div className="bg-muted px-[35px] py-[30px] rounded-[5px]">
+                <div>
+                    <h3 className="text-[18px] font-bold mb-[5px] text-[#aaa]">免責事項</h3>
+                    <div className="bg-muted px-[20px] md:px-[35px] py-[20px] md:py-[30px] rounded-[5px]">
                         <p className="text-[13px] md:text-[16px]">イラストのダウンロード、利用、編集、加工によって生じたトラブルについては一切責任を負いません。規約は予告なく変更されることがあります。また、過去のイラストの変更や削除も予告なく行われる場合がありますので、ご了承ください。</p>
                     </div>
                 </div>

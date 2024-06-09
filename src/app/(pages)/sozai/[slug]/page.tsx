@@ -64,9 +64,9 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
 
     return (
         <div>
-            <div className="w-[85%] mx-auto py-[70px]">
+            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:py-[70px]">
                 <SozaiHeader name={SozaiDetail.name} category={SozaiDetail.category} tags={SozaiDetail.tags} id={SozaiDetail.id} />
-                <div className="grid lg:grid-cols-2 grid-rows-4 gap-[30px] lg:gap-x-[40px] lg:gap-y-[0px] mb-[20px]">
+                <div className="grid lg:grid-cols-2 grid-rows-4 gap-[15px] lg:gap-x-[40px] lg:gap-y-[0px] mb-[20px]">
                     <div className="order-1 col-span-1 row-span-4">
                         <div className="p-[30px] border-2 rounded-xl bg-muted">
                             <Image src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />

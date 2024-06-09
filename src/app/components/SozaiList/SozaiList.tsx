@@ -9,7 +9,7 @@ const SozaiList = (
 
     return (
         <div>
-            <div className="w-[95%] md:w-[85%] mx-auto py-[50px] md:py-[70px] px-[15px]">
+            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:py-[70px]">
                 {!isHome && <div className="mb-[5px]">
                     <Breadcrumb
                         separator={<ChevronRight size={15} />}
@@ -25,7 +25,7 @@ const SozaiList = (
                         </BreadcrumbList>
                     </Breadcrumb>
                 </div>}
-                <h2 className="font-bold text-[25px] sm:text-[30px] mb-[20px] flex items-center gap-2">
+                <h2 className="font-bold text-[20px] sm:text-[30px] mb-[20px] flex items-center gap-2">
                     {/* <Tag /> */}
                     <p>{title}</p>
                 </h2>
