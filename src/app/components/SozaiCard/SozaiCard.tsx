@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const SozaiCard = ({ src, name, href }: { src: string, name: string, href: string }) => {
+const SozaiCard = ({ src, name, href, requestedBy }: { src: string, name: string, href: string, requestedBy?: string }) => {
 
     return (
         <div className="col-span-1">
@@ -10,8 +10,11 @@ const SozaiCard = ({ src, name, href }: { src: string, name: string, href: strin
                     <Image src={src} width={500} height={500} alt="cat" className="w-full" fetchPriority="high" />
                 </div>
             </Link>
+            {requestedBy && (
+                <p className="text-[12px] text-muted-foreground mb-[5px]">Requested by {requestedBy}</p>
+            )}
             <div className="flex items-center justify-between">
-                <p className="text-[14px] md:text-[16px]">{name}</p>
+                <p className="text-[16px]">{name}</p>
             </div>
         </div>
     )

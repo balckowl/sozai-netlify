@@ -31,7 +31,7 @@ const SozaiHeader = ({ name, category, tags, id }: { name: string, category: any
                     {name}
                 </h2>
             </div>
-            <div className="mb-[30px] flex-col flex sm:flex-row sm:items-center gap-3">
+            <div className="mb-[30px] flex items-center gap-3">
                 <CategoryList contents={category} />
                 <TagList contents={tags} />
             </div>

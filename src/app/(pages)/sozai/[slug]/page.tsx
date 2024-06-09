@@ -1,7 +1,8 @@
 import DownloadBtn from "@/app/components/DownloadBtn/DownloadBtn"
 import SozaiHeader from "@/app/components/SozaiHeader/SozaiHeader"
+import { Button } from "@/components/ui/button"
 import { Sozai, getList, getSozaiDetail } from "@/libs/microcms"
-import { faFacebook, faInstagram, faTwitter, faXTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faFacebook, faInstagram, faLine, faLinkedin, faTwitter, faXTwitter } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { format } from "date-fns"
 import Image from "next/image"
@@ -67,36 +68,48 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
                 <SozaiHeader name={SozaiDetail.name} category={SozaiDetail.category} tags={SozaiDetail.tags} id={SozaiDetail.id} />
                 <div className="grid lg:grid-cols-2 grid-rows-4 gap-[30px] lg:gap-x-[40px] lg:gap-y-[0px] mb-[20px]">
                     <div className="order-1 col-span-1 row-span-4">
-                        <div className="p-[30px] border-2 rounded-xl bg-muted mb-[15px]">
+                        <div className="p-[30px] border-2 rounded-xl bg-muted">
                             <Image src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />
                         </div>
-
-                        <div className="flex justify-between">
+                    </div>
+                    <Link className="order-3 lg:order-2 col-span-1 row-span-3 bg-[#FCF5EF] flex justify-center items-center h-full lg:h-full rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer" href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" target="_blank">
+                        <Image src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
+                    </Link>
+                    <DownloadBtn url={SozaiDetail.material.url} name={SozaiDetail.name} />
+                    <div className="lg:order-4 order-1 lg:mt-[15px]">
+                        <div className="flex justify-between items-center">
                             <div className="flex items-center gap-4">
-                                {/* <p className="text-[13px]">{format(SozaiDetail.createdAt, "yyyy-MM-dd")}</p> */}
                                 <div className="flex items-center gap-3">
-                                    <ul className="flex gap-4">
+                                    <ul className="flex gap-2">
                                         <li>
-                                            <FontAwesomeIcon icon={faXTwitter} width="20px" height="20px" />
+                                            <Button asChild variant="ghost" size="icon">
+                                                <Link target="_blank" href={`http://twitter.com/share?url=${process.env.NEXT_PUBLIC_SITE_URL}/sozai/${SozaiDetail.id}&text=${SozaiDetail.name}&via=SOZAI2024`}>
+                                                    <FontAwesomeIcon icon={faXTwitter} width="20px" height="20px" />
+                                                </Link>
+                                            </Button>
                                         </li>
                                         <li>
-                                            <FontAwesomeIcon icon={faInstagram} width="20px" height="20px" />
+                                            <Button asChild variant="ghost" size="icon">
+                                                <Link target="_blank" href={`http://www.facebook.com/share.php?u=${process.env.NEXT_PUBLIC_SITE_URL}/sozai/${SozaiDetail.id}`}>
+                                                    <FontAwesomeIcon icon={faFacebook} width="20px" height="20px" />
+                                                </Link>
+                                            </Button>
                                         </li>
                                         <li>
-                                            <FontAwesomeIcon icon={faFacebook} width="20px" height="20px" />
+                                            <Button asChild variant="ghost" size="icon">
+                                                <Link target="_blank" href={`https://social-plugins.line.me/lineit/share?url=${process.env.NEXT_PUBLIC_SITE_URL}/sozai/${SozaiDetail.id}`}>
+                                                    <FontAwesomeIcon icon={faLine} width="20px" height="20px" />
+                                                </Link>
+                                            </Button>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             {SozaiDetail.requestedBy && (
-                                <div className="text-[13px]">Requested by {SozaiDetail.requestedBy}</div>
+                                <div className="text-[13px] text-muted-foreground">Requested by {SozaiDetail.requestedBy}</div>
                             )}
                         </div>
                     </div>
-                    <Link className="order-3 sm:order-2 col-span-1 row-span-3 bg-[#FCF5EF] flex justify-center items-center h-full lg:h-full rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer" href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" target="_blank">
-                        <Image src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
-                    </Link>
-                    <DownloadBtn url={SozaiDetail.material.url} name={SozaiDetail.name} />
                 </div>
             </div>
         </div>
