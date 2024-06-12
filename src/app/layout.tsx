@@ -16,18 +16,18 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className={notoSansJP.className}>
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           <Header />
           <main>
             {children}
           </main>
           <Footer />
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
       {!!process.env.GOOGLE_ANALYTICS_ID && (
         <GoogleTagManager gtmId={process.env.GOOGLE_ANALYTICS_ID} />

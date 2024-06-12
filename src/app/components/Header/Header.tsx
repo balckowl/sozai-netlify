@@ -19,14 +19,14 @@ const Headar = () => {
                             キーワード
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <ModeToggle />
-                    </li>
+                    </li> */}
                 </ul>
 
-                <div className="md:hidden">
+                {/* <div className="md:hidden">
                     <ModeToggle />
-                </div>
+                </div> */}
             </div>
         </div>
     )
