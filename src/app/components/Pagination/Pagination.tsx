@@ -41,7 +41,7 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
                 {currentPage > 1 && (
                     <Link href={`?page=${currentPage - 1}`}>
                         <Button className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowLeft />
+                            <ArrowLeft size={20}/>
                         </Button>
                     </Link>
                 )}
@@ -64,13 +64,13 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
                 {currentPage < totalPages && (
                     <Link href={`?page=${currentPage + 1}`}>
                         <Button className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowRight />
+                            <ArrowRight size={20}/>
                         </Button>
                     </Link>
                 )}
             </div>
 
-            <div className="flex justify-center items-center pb-[100px] gap-5 sm:hidden">
+            <div className="flex justify-center items-center pb-[50px] gap-5 sm:hidden">
                 {currentPage > 1 && (
                     <Link href={`?page=${currentPage - 1}`}>
                         <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
