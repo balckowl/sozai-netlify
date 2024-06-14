@@ -4,7 +4,7 @@ import Link from "next/link"
 const Headar = () => {
     return (
         <div className="h-[80px] border-b-[1px]">
-            <div className="container flex items-center justify-between mx-auto h-full px-[15px]">
+            <div className="w-[90%] lg:w-[85%] flex items-center justify-between mx-auto h-full">
                 <Link href="/">
                     <h1 className="text-[30px] text-bold font-bold">SOZ<span className="text-red-300">AI</span></h1>
                 </Link>
@@ -19,14 +19,14 @@ const Headar = () => {
                             キーワード
                         </Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <ModeToggle />
-                    </li> */}
+                    </li>
                 </ul>
 
-                {/* <div className="md:hidden">
+                <div className="md:hidden">
                     <ModeToggle />
-                </div> */}
+                </div>
             </div>
         </div>
     )
