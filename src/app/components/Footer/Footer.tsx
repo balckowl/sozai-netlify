@@ -31,6 +31,7 @@ const Footer = async () => {
                         <Link href="/about" className="text-[12px] hover:underline">SOZAIついて</Link>
                         <Link href="/guide" className="text-[12px] hover:underline">利用規約</Link>
                         <Link href="/private-policy" className="text-[12px] hover:underline">プライバシーポリシー</Link>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcERTBs7fiL-pnQZo3gTykis77ECGtn6_nCpIuFtoQKXsAXA/viewform" className="text-[12px] hover:underline" target="_blank">お問合せフォーム</a>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" className="text-[12px] hover:underline" target="_blank">イラストリクエスト</a>
                         <a href="https://x.com/SOZAI2024" className="text-[12px] hover:underline" target="_blank">X(旧Twitter)</a>
                     </div>
