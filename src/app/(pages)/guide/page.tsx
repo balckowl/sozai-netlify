@@ -1,5 +1,26 @@
+import { Metadata } from "next"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../../components/ui/breadcrumb"
 import { ChevronRight } from "lucide-react"
+
+export const metadata: Metadata = {
+    title: 'SOZAI | 利用規約',
+    description: 'カラフルな差し色が特徴の高品質フリーイラスト素材サイト。どんな場面でも合わせやすい素材。多様な形式でのダウンロードが可能。',
+    openGraph: {
+        title: 'SOZAI | SOZAI一覧',
+        description: 'カラフルな差し色が特徴の高品質フリーイラスト素材サイト。どんな場面でも合わせやすい素材。多様な形式でのダウンロードが可能。',
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/guide`,
+        siteName: 'SOZAI',
+        images: [
+            {
+                width: '1200',
+                height: '630',
+                url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/ogp/home-ogp.png`
+            }
+        ],
+        locale: 'jp',
+        type: 'article',
+    }
+}
 
 const page = () => {
     return (

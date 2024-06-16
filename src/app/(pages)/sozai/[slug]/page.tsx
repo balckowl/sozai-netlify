@@ -14,10 +14,10 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 
     return {
         title: `SOZAI | ${SozaiDetail.name}`,
-        description: 'AIで作ったフリー素材。どんな場面でも合わせやすい素材。PNG、JPG、WEBP、SVG形式でのダウンロードが可能。',
+        description: 'カラフルな差し色が特徴の高品質フリーイラスト素材サイト。どんな場面でも合わせやすい素材。多様な形式でのダウンロードが可能。',
         openGraph: {
             title: `SOZAI | ${SozaiDetail.name}`,
-            description: 'AIで作ったフリー素材。どんな場面でも合わせやすい素材。PNG、JPG、WEBP、SVG形式でのダウンロードが可能。',
+            description: 'カラフルな差し色が特徴の高品質フリーイラスト素材サイト。どんな場面でも合わせやすい素材。多様な形式でのダウンロードが可能。',
             url: `${process.env.NEXT_PUBLIC_SITE_URL}/sozai/${SozaiDetail.id}`,
             siteName: 'SOZAI',
             images: [
