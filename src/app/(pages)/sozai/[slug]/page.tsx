@@ -34,7 +34,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 }
 
 //ssgの設定
-export const dynamicParams = false
+// export const dynamicParams = false
 
 export async function generateStaticParams() {
 
