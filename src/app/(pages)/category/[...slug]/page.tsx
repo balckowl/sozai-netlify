@@ -29,7 +29,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 }
 
 //ssgの設定
-export const dynamic = 'force-static'
+// export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
 
@@ -45,10 +45,22 @@ export async function generateStaticParams() {
         offset += limit; // 次のページへのオフセットを更新
     } while (allCategories.length < totalCount)
 
-    return allCategories.map((category, index) => ({
-        slug: [category.id, String(index + 1)]
-    }))
+    const params = [];
 
+    for (const category of allCategories) {
+        let page = 1;
+        let sozaies;
+        do {
+            const offset = (page - 1) * 9;
+            sozaies = await getList({ filters: `category[contains]${category.id}`, limit: 9, offset });
+            if (sozaies.contents.length > 0) {
+                params.push({ slug: [category.id, String(page)] });
+            }
+            page++;
+        } while (sozaies.contents.length > 0);
+    }
+
+    return params;
 }
 
 const CategoryDetail = async ({ params }: { params: { slug: string[] } }) => {
@@ -58,13 +70,13 @@ const CategoryDetail = async ({ params }: { params: { slug: string[] } }) => {
     const page = slug[1] ? parseInt(slug[1], 10) : 1
     const limit = 9;
     const offset = (page - 1) * limit;
-    const Sozaies = await getList({ filters: `category[contains]${slug[0]}`, limit, offset })
+    const sozaies = await getList({ filters: `category[contains]${slug[0]}`, limit, offset })
     const Category = await getCategoryList({ filters: `id[equals]${slug[0]}` })
 
     return (
         <div>
-            <SozaiList title={Category.contents[0]?.name} contents={Sozaies.contents} />
-            <Pagination currentPage={page} totalCount={Sozaies.totalCount} limit={limit} segment={`category/${slug[0]}`} />
+            <SozaiList title={Category.contents[0]?.name} contents={sozaies.contents} />
+            <Pagination currentPage={page} totalCount={sozaies.totalCount} limit={limit} segment={`category/${slug[0]}`} />
         </div>
     )
 }

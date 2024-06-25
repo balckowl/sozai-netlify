@@ -29,7 +29,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 }
 
 //ssgの設定
-export const dynamic = 'force-static'
+// export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
     let offset = 0;
@@ -42,11 +42,24 @@ export async function generateStaticParams() {
         allTags = allTags.concat(response.contents);
         totalCount = response.totalCount; // 総アイテム数を更新
         offset += limit; // 次のページへのオフセットを更新
-    } while (allTags.length < totalCount)
+    } while (allTags.length < totalCount);
 
-    return allTags.map((tag, index) => ({
-        slug: [tag.id, String(index + 1)]
-    }))
+    const params = [];
+
+    for (const tag of allTags) {
+        let page = 1;
+        let sozaies;
+        do {
+            const offset = (page - 1) * 9;
+            sozaies = await getList({ filters: `tags[contains]${tag.id}`, limit: 9, offset });
+            if (sozaies.contents.length > 0) {
+                params.push({ slug: [tag.id, String(page)] });
+            }
+            page++;
+        } while (sozaies.contents.length > 0);
+    }
+
+    return params;
 }
 
 const TagDetail = async ({ params }: { params: { slug: string[] } }) => {
@@ -56,13 +69,13 @@ const TagDetail = async ({ params }: { params: { slug: string[] } }) => {
     const page = slug ? parseInt(slug[1], 10) : 1;
     const limit = 9;
     const offset = (page - 1) * limit;
-    const Sozaies = await getList({ filters: `tags[contains]${slug[0]}`, limit, offset })
+    const sozaies = await getList({ filters: `tags[contains]${slug[0]}`, limit, offset })
     const Tags = await getTagList({ filters: `id[equals]${slug[0]}` })
 
     return (
         <div>
-            <SozaiList title={Tags.contents[0]?.name} contents={Sozaies.contents} />
-            <Pagination currentPage={page} totalCount={Sozaies.totalCount} limit={limit} segment={`tag/${slug[0]}`} />
+            <SozaiList title={Tags.contents[0]?.name} contents={sozaies.contents} />
+            <Pagination currentPage={page} totalCount={sozaies.totalCount} limit={limit} segment={`tag/${slug[0]}`} />
         </div>
     )
 }
