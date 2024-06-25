@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     }
 }
 
+export const dynamic = 'force-static'
+
 const AllSozai = async ({ searchParams }: { searchParams: { page: string } }) => {
 
     const page = searchParams.page ? parseInt(searchParams.page, 10) : 1;
