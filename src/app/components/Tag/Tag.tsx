@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Tags = ({ name, href }: { name: string, href: string }) => {
   return (
-    <Link href={`/tag/${href}`}>
+    <Link href={`/tag/${href}/1`}>
       <div className="flex gap-1 items-center">
         <Tag width={18} height={18} />
         <p className="text-[14px]">{name}</p>

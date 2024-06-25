@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, currentPage: number, limit: number }) => {
+const Pagination = ({ totalCount, currentPage, limit, segment }: { totalCount: number, currentPage: number, limit: number, segment: string }) => {
 
     const totalPages = Math.ceil(totalCount / limit)
 
@@ -39,9 +39,9 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
         <div>
             <div className="sm:flex justify-center items-center pb-[50px] md:pb-[100px] gap-3 hidden">
                 {currentPage > 1 && (
-                    <Link href={`?page=${currentPage - 1}`}>
+                    <Link href={`/${segment}/${currentPage - 1}`}>
                         <Button className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowLeft size={20}/>
+                            <ArrowLeft size={20} />
                         </Button>
                     </Link>
                 )}
@@ -51,7 +51,7 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
                             ...
                         </span>
                     ) : (
-                        <Link href={`?page=${page}`} key={index}>
+                        <Link href={`/${segment}/${page}`} key={index}>
                             <Button
                                 className={`w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center ${page === currentPage ? 'bg-gray-700 text-white' : ''
                                     }`}
@@ -62,9 +62,9 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
                     )
                 )}
                 {currentPage < totalPages && (
-                    <Link href={`?page=${currentPage + 1}`}>
+                    <Link href={`/${segment}/${currentPage + 1}`}>
                         <Button className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowRight size={20}/>
+                            <ArrowRight size={20} />
                         </Button>
                     </Link>
                 )}
@@ -72,17 +72,17 @@ const Pagination = ({ totalCount, currentPage, limit }: { totalCount: number, cu
 
             <div className="flex justify-center items-center pb-[50px] gap-5 sm:hidden">
                 {currentPage > 1 && (
-                    <Link href={`?page=${currentPage - 1}`}>
+                    <Link href={`/${segment}/${currentPage - 1}`}>
                         <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowLeft size={20}/>
+                            <ArrowLeft size={20} />
                         </Button>
                     </Link>
                 )}
                 {currentPage > 1 && (<div>{currentPage} / {totalPages}</div>)}
                 {currentPage < totalPages && (
-                    <Link href={`?page=${currentPage + 1}`}>
+                    <Link href={`/${segment}/${currentPage + 1}`}>
                         <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowRight size={20}/>
+                            <ArrowRight size={20} />
                         </Button>
                     </Link>
                 )}

@@ -1,6 +1,6 @@
 import Pagination from "@/app/components/Pagination/Pagination";
 import SozaiList from "@/app/components/SozaiList/SozaiList"
-import { getList } from "@/libs/microcms"
+import { Sozai, getList } from "@/libs/microcms"
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,17 +25,38 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static'
 
-const AllSozai = async ({ searchParams }: { searchParams: { page: string } }) => {
+export async function generateStaticParams() {
 
-    const page = searchParams.page ? parseInt(searchParams.page, 10) : 1;
+    const limit = 10;
+    let offset = 0;
+    let sozaies: Sozai[] = []
+    let totalCount = 0;
+
+    do {
+        const response = await getList({ limit: limit, offset: offset });
+        sozaies = sozaies.concat(response.contents);
+        totalCount = response.totalCount; // 総アイテム数を更新
+        offset += limit; // 次のページへのオフセットを更新
+    } while (sozaies.length < totalCount)
+
+    return sozaies.map((_, index) => ({
+        slug: String(index + 1)
+    }))
+}
+
+const AllSozai = async ({ params }: { params: { slug: string } }) => {
+
+    const { slug } = params
+
+    const page = slug ? parseInt(slug, 10) : 1;
     const limit = 9;
     const offset = (page - 1) * limit;
-    const Sozaies = await getList({ limit, offset })
+    const sozaies = await getList({ limit, offset })
 
     return (
         <div>
-            <SozaiList title="素材一覧" contents={Sozaies.contents} />
-            <Pagination currentPage={page} totalCount={Sozaies.totalCount} limit={limit} />
+            <SozaiList title="素材一覧" contents={sozaies.contents} />
+            <Pagination currentPage={page} totalCount={sozaies.totalCount} limit={limit} segment={`all-sozai`} />
         </div>
     )
 }
