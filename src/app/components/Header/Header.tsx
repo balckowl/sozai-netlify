@@ -10,7 +10,7 @@ const Headar = () => {
                 </Link>
                 <ul className="md:flex items-center gap-4 hidden">
                     <li>
-                        <Link href="/all-sozai">
+                        <Link href="/all-sozai/1">
                             全ての素材
                         </Link>
                     </li>
