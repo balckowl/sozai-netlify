@@ -73,16 +73,16 @@ const Pagination = ({ totalCount, currentPage, limit, segment }: { totalCount: n
             <div className="flex justify-center items-center pb-[50px] gap-5 sm:hidden">
                 {currentPage > 1 && (
                     <Link href={`/${segment}/${currentPage - 1}`}>
-                        <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowLeft size={20} />
+                        <Button className="w-[45px] h-[45px] rounded-md flex justify-center items-center gap-2">
+                            <ArrowLeft size={30} />
                         </Button>
                     </Link>
                 )}
-                {currentPage > 1 && (<div>{currentPage} / {totalPages}</div>)}
+                {(<div className="text-[16px]">{currentPage} / {totalPages}</div>)}
                 {currentPage < totalPages && (
                     <Link href={`/${segment}/${currentPage + 1}`}>
-                        <Button className="w-[40px] h-[40px] rounded-md flex justify-center items-center gap-2">
-                            <ArrowRight size={20} />
+                        <Button className="w-[45px] h-[45px] rounded-md flex justify-center items-center gap-2">
+                            <ArrowRight size={30} />
                         </Button>
                     </Link>
                 )}

@@ -9,23 +9,25 @@ const Footer = async () => {
     const Tags = await getAllTagList()
 
     return (
-        <div id="footer">
-            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:pt-[50px] md:pb-[100px] border-t-[1px]">
+        <div id="footer" className="sticky top-full">
+            <div className="w-[90%] lg:w-[85%] max-w-[1300px] mx-auto py-[40px] lg:pt-[50px] md:pb-[100px] border-t-[1px]">
                 <h2 className="font-bold text-[20px] md:text-[25px] mb-[30px]">キーワードから探す</h2>
                 <div className="mb-[30px]">
                     <CategorList contents={Categories} />
                 </div>
-                <div className="mb-[50px]">
+                <div className="mb-[30px]">
                     <TagList contents={Tags} />
                 </div>
-                <Link href="https://x.com/SOZAI2024" target="_blank">
-                    <div className="h-[200px] w-full bg-[#FCF5EF] mb-[50px] md:flex items-center justify-center hidden rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer">
-                        <Image src="/banner.png" width={1200} height={200} alt="" className="w-full rounded-[10px]" />
-                    </div>
-                    <div className="h-full w-full bg-[#FCF5EF] mb-[50px] flex items-center justify-center md:hidden rounded-[10px] cursor-pointer">
-                        <Image src="/banner2.png" width={400} height={300} alt="" className="w-full rounded-[10px]" />
-                    </div>
-                </Link>
+                <div>
+                    <a href="https://x.com/SOZAI2024" target="_blank">
+                        <div className="w-full bg-[#FCF5EF] mb-[50px] md:flex items-center justify-center hidden rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer">
+                            <Image src="/banner.png" width={1200} height={200} alt="" className="w-full rounded-[10px]" />
+                        </div>
+                        <div className="w-full bg-[#FCF5EF] mb-[50px] flex items-center justify-center md:hidden rounded-[10px] cursor-pointer">
+                            <Image src="/banner2.png" width={400} height={300} alt="" className="w-full rounded-[10px]" />
+                        </div>
+                    </a>
+                </div>
                 <div className="border-t-[1px] py-[20px] flex justify-between flex-col md:flex-row gap-[50px]">
                     <div className="flex gap-2 flex-wrap">
                         <Link href="/about" className="text-[12px] hover:underline">SOZAIついて</Link>

@@ -4,7 +4,7 @@ import Link from "next/link"
 const Headar = () => {
     return (
         <div className="h-[80px] border-b-[1px]">
-            <div className="w-[90%] lg:w-[85%] flex items-center justify-between mx-auto h-full">
+            <div className="w-[90%] lg:w-[85%] max-w-[1300px] flex items-center justify-between mx-auto h-full">
                 <Link href="/">
                     <h1 className="text-[30px] text-bold font-bold">SOZ<span className="text-red-300">AI</span></h1>
                 </Link>

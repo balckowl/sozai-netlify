@@ -63,7 +63,7 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
 
     return (
         <div>
-            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:py-[70px]">
+            <div className="w-[90%] lg:w-[85%] max-w-[1300px] mx-auto py-[40px] lg:py-[70px]">
                 <SozaiHeader name={SozaiDetail.name} category={SozaiDetail.category} tags={SozaiDetail.tags} id={SozaiDetail.id} />
                 <div className="grid lg:grid-cols-2 grid-rows-4 gap-[15px] lg:gap-x-[40px] lg:gap-y-[0px] mb-[20px]">
                     <div className="order-1 col-span-1 row-span-4">
@@ -71,9 +71,11 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
                             <Image src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />
                         </div>
                     </div>
-                    <Link className="order-3 lg:order-2 col-span-1 row-span-3 bg-[#FCF5EF] flex justify-center items-center h-full lg:h-full rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer" href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" target="_blank">
-                        <Image src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
-                    </Link>
+                    <div className="order-3 lg:order-2 col-span-1 row-span-3">
+                        <Link className="bg-[#FCF5EF] flex justify-center items-center h-full lg:h-full rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer" href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" target="_blank">
+                            <Image src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
+                        </Link>
+                    </div>
                     <DownloadBtn url={SozaiDetail.material.url} name={SozaiDetail.name} />
                     <div className="lg:order-4 order-1 lg:mt-[15px]">
                         <div className="flex justify-between items-center">

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const page = () => {
     return (
         <div>
-            <div className="w-[90%] lg:w-[85%] mx-auto py-[40px] lg:py-[70px]">
+            <div className="w-[90%] lg:w-[85%] max-w-[1300px] mx-auto py-[40px] lg:py-[70px]">
                 <Breadcrumb
                     separator={<ChevronRight size={15} />}
                 >
