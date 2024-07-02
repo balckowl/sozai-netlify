@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import GoogleAdsense from "./components/GoogleAdsense/GoogleAdsense";
 import { ThemeProvider } from "@/libs/theme-provider";
+import { cn } from "@/libs/utils";
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
           <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID} />
         )}
       </head>
-      <body className={notoSansJP.className}>
+      <body className={cn(notoSansJP.className, "min-h-dvh flex flex-col")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
