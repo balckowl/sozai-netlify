@@ -9,7 +9,7 @@ const Footer = async () => {
     const Tags = await getAllTagList()
 
     return (
-        <div id="footer" className="sticky top-full">
+        <div id="footer">
             <div className="w-[90%] lg:w-[85%] max-w-[1300px] mx-auto py-[40px] lg:pt-[50px] md:pb-[100px] border-t-[1px]">
                 <h2 className="font-bold text-[20px] md:text-[25px] mb-[30px]">キーワードから探す</h2>
                 <div className="mb-[30px]">
