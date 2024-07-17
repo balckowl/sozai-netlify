@@ -17,7 +17,7 @@ const SozaiHeader = ({ name, category, tags, id }: { name: string, category: any
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href={`/category/${category[0]?.id}`}>{category[0]?.name}</BreadcrumbLink>
+                            <BreadcrumbLink href={`/category/${category[0]?.id}/1`}>{category[0]?.name}</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem >
