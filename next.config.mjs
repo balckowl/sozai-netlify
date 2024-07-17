@@ -7,7 +7,9 @@ const nextConfig = withExportImages({
         domains: ["images.microcms-assets.io"],
         // unoptimized: true,
     },
-   output: 'export', // 
+    images: { loader: "custom" },
+    transpilePackages: ["next-image-export-optimizer"],
+    output: 'export', // 
 })
 
 export default nextConfig;

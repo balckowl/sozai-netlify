@@ -23,6 +23,7 @@
     "microcms-js-sdk": "^3.1.1",
     "next": "14.2.3",
     "next-export-optimize-images": "^4.5.0",
+    "next-image-export-optimizer": "^1.14.1",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
