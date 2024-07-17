@@ -1,15 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-import withExportImages from 'next-export-optimize-images';
-
-const nextConfig = withExportImages({
+const nextConfig = {
     images: {
         domains: ["images.microcms-assets.io"],
-        // unoptimized: true,
+        unoptimized: true,
     },
-    images: { loader: "custom" },
-    transpilePackages: ["next-image-export-optimizer"],
     output: 'export', // 
-})
+}
 
 export default nextConfig;

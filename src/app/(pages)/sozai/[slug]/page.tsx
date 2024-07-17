@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Sozai, getList, getSozaiDetail } from "@/libs/microcms"
 import { faFacebook, faLine, faXTwitter } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import ExportedImage from "next-image-export-optimizer";
-
+import Image from "next/image"
 import Link from "next/link"
 
 export const generateMetadata = async ({ params }: { params: { slug: string } }) => {
@@ -69,12 +68,12 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
                 <div className="grid lg:grid-cols-2 grid-rows-4 gap-[15px] lg:gap-x-[40px] lg:gap-y-[0px] mb-[20px]">
                     <div className="order-1 col-span-1 row-span-4">
                         <div className="p-[30px] border-2 rounded-xl bg-muted">
-                            <ExportedImage src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />
+                            <Image src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />
                         </div>
                     </div>
                     <div className="order-3 lg:order-2 col-span-1 row-span-3">
                         <Link className="bg-[#FCF5EF] flex justify-center items-center h-full lg:h-full rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer" href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" target="_blank">
-                            <ExportedImage src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
+                            <Image src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
                         </Link>
                     </div>
                     <DownloadBtn url={SozaiDetail.material.url} name={SozaiDetail.name} />
