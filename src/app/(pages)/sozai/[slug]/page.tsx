@@ -1,3 +1,4 @@
+import GoogleAd from "@/app/components/Adsense/Adsense"
 import DownloadBtn from "@/app/components/DownloadBtn/DownloadBtn"
 import SozaiHeader from "@/app/components/SozaiHeader/SozaiHeader"
 import { Button } from "@/components/ui/button"
@@ -72,9 +73,7 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
                         </div>
                     </div>
                     <div className="order-3 lg:order-2 col-span-1 row-span-3">
-                        <Link className="bg-[#FCF5EF] flex justify-center items-center h-full lg:h-full rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer" href="https://docs.google.com/forms/d/e/1FAIpQLSf4NYZMUFOzpNHSKoBJ7_cVoz2SskgKeAWwl7W0Kqr2FHt4ow/viewform" target="_blank">
-                            <Image src="/post.png" width={500} height={400} alt="" className="w-full rounded-[10px] h-[300px] object-cover" />
-                        </Link>
+                        <GoogleAd slot="8068189834"/>
                     </div>
                     <DownloadBtn url={SozaiDetail.material.url} name={SozaiDetail.name} />
                     <div className="lg:order-4 order-1 lg:mt-[15px]">

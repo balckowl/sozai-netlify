@@ -3,6 +3,7 @@ import CategorList from "../CategoryList/CategoryList"
 import TagList from "../TagList/TagList"
 import Link from "next/link"
 import Image from "next/image"
+import GoogleAd from "../Adsense/Adsense"
 
 const Footer = async () => {
     const Categories = await getAllCategoryList()
@@ -18,15 +19,8 @@ const Footer = async () => {
                 <div className="mb-[30px]">
                     <TagList contents={Tags} />
                 </div>
-                <div>
-                    <a href="https://x.com/SOZAI2024" target="_blank">
-                        <div className="w-full bg-[#FCF5EF] mb-[50px] md:flex items-center justify-center hidden rounded-[10px] duration-300 hover:translate-y-1 cursor-pointer">
-                            <Image src="/banner.png" width={1200} height={200} alt="" className="w-full rounded-[10px]" />
-                        </div>
-                        <div className="w-full bg-[#FCF5EF] mb-[50px] flex items-center justify-center md:hidden rounded-[10px] cursor-pointer">
-                            <Image src="/banner2.png" width={400} height={300} alt="" className="w-full rounded-[10px]" />
-                        </div>
-                    </a>
+                <div className="mb-[30px]">
+                    <GoogleAd slot="5670123173"/>
                 </div>
                 <div className="border-t-[1px] py-[20px] flex justify-between flex-col md:flex-row gap-[50px]">
                     <div className="flex gap-2 flex-wrap">
