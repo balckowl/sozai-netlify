@@ -2,7 +2,6 @@ import { getAllCategoryList, getAllTagList } from "@/libs/microcms"
 import CategorList from "../CategoryList/CategoryList"
 import TagList from "../TagList/TagList"
 import Link from "next/link"
-import Image from "next/image"
 import GoogleAd from "../Adsense/Adsense"
 
 const Footer = async () => {
@@ -20,7 +19,7 @@ const Footer = async () => {
                     <TagList contents={Tags} />
                 </div>
                 <div className="mb-[30px]">
-                    <GoogleAd slot="5670123173"/>
+                    <GoogleAd slot="5670123173" />
                 </div>
                 <div className="border-t-[1px] py-[20px] flex justify-between flex-col md:flex-row gap-[50px]">
                     <div className="flex gap-2 flex-wrap">
