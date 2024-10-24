@@ -18,9 +18,9 @@ const Footer = async () => {
                 <div className="mb-[30px]">
                     <TagList contents={Tags} />
                 </div>
-                {/* <div className="mb-[30px]">
+                <div className="mb-[30px]">
                     <GoogleAd slot="5670123173" />
-                </div> */}
+                </div>
                 <div className="border-t-[1px] py-[20px] flex justify-between flex-col md:flex-row gap-[50px]">
                     <div className="flex gap-2 flex-wrap">
                         <Link href="/about" className="text-[12px] hover:underline">SOZAIついて</Link>
