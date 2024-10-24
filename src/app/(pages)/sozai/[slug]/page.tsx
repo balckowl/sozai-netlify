@@ -72,9 +72,9 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
                             <Image src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />
                         </div>
                     </div>
-                    {/* <div className="order-3 lg:order-2 col-span-1 row-span-3 place-content-center">
+                    <div className="order-3 lg:order-2 col-span-1 row-span-3 place-content-center w-full">
                         <GoogleAd slot="8068189834"/>
-                    </div> */}
+                    </div>
                     <DownloadBtn url={SozaiDetail.material.url} name={SozaiDetail.name} />
                     <div className="lg:order-4 order-1 lg:mt-[15px]">
                         <div className="flex justify-between items-center">

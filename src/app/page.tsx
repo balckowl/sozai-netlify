@@ -30,7 +30,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <SozaiList title="新しい素材" contents={Sozaies.contents} isHome={true}/>
       <MoreSozaiBtn />
     </>
