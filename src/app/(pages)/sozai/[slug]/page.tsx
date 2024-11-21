@@ -69,7 +69,7 @@ const SozaiDetail = async ({ params }: { params: { slug: string } }) => {
                 <div className="grid lg:grid-cols-2 grid-rows-4 gap-[15px] lg:gap-x-[40px] lg:gap-y-[0px] mb-[20px]">
                     <div className="order-1 col-span-1 row-span-4">
                         <div className="p-[30px] border-2 rounded-xl bg-muted">
-                            <Image src={SozaiDetail.material.url} width={700} height={700} alt="" className="w-full" />
+                            <Image data-pagefind-meta="image[src], image_alt[alt]" src={SozaiDetail.material.url} width={700} height={700} alt={SozaiDetail.name} className="w-full" />
                         </div>
                     </div>
                     <div className="order-3 lg:order-2 col-span-1 row-span-3 place-content-center w-full">
