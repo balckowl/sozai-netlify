@@ -1,5 +1,6 @@
 import { ModeToggle } from "@/components/mode-toggle"
 import Link from "next/link"
+import SearchButton from "../Search/Search"
 
 const Headar = () => {
     return (
@@ -18,6 +19,9 @@ const Headar = () => {
                         <Link href="#footer">
                             キーワード
                         </Link>
+                    </li>
+                    <li>
+                        <SearchButton />
                     </li>
                     <li>
                         <ModeToggle />
