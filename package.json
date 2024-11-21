@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
-    "pagefind": "pagefind --site out --output-path 'public/pagefind'",
+    "pagefind": "pagefind --site out",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
