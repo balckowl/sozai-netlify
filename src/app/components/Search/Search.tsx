@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Search } from 'lucide-react';
+import Link from 'next/link';
 
 type Anchor = {
     element: string;
@@ -50,6 +51,8 @@ export default function SearchButton() {
     const [query, setQuery] = useState<string>('');
     // 検索結果を格納
     const [results, setResults] = useState<ResultType[]>([]);
+    //dialogの開閉状態
+    const [isOpen, setIsOpen] = useState(false);
 
     // pagefindのファイルを読み込みにいく
     useEffect(() => {
@@ -85,7 +88,7 @@ export default function SearchButton() {
 
     // 
     return (
-        <Dialog>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
                 <Button variant="ghost" size="icon">
                     <Search className="h-[1.1rem] w-[1.1rem]" />
@@ -93,7 +96,7 @@ export default function SearchButton() {
             </DialogTrigger>
             <DialogContent className="h-[300px] overflow-y-scroll">
                 <div className='relative h-[45px]'>
-                    <Search className='absolute right-[20px] top-[50%] translate-y-[-50%] w-[1.1rem] h-[1.1rem]'/>
+                    <Search className='absolute right-[20px] top-[50%] translate-y-[-50%] w-[1.1rem] h-[1.1rem]' />
                     <input
                         type="text"
                         placeholder="Search..."
@@ -107,7 +110,7 @@ export default function SearchButton() {
                         <h2 className='border-b border-black pb-1'>検索結果（{results.length}件）</h2>
                     )}
                     {results.map((result) => (
-                        <Result key={result.id} result={result} />
+                        <Result key={result.id} result={result} onClose={() => setIsOpen(false)} />
                     ))}
                 </div>
             </DialogContent>
@@ -116,31 +119,37 @@ export default function SearchButton() {
 }
 
 // 検索結果として出力するものを作成
-function Result({ result }: { result: ResultType }) {
+function Result({ result, onClose }: { result: ResultType; onClose: () => void }) {
     const [data, setData] = useState<ResultData | null>(null);
 
     useEffect(() => {
         async function fetchData() {
             const resultData = await result.data();
-            setData(resultData);
+            setData(resultData)
         }
         fetchData();
     }, [result]);
 
-    if (!data) return null;
-
-    console.log(data)
+    if (!data) return (
+        <div id="skeleton" className="border-b py-3 flex items-center gap-3">
+            <div className="bg-muted w-[150px] h-[150px] border rounded-md p-2 animate-pulse" />
+            <div className="flex-1 space-y-3">
+                <div className="h-[20px] bg-muted rounded-md animate-pulse w-[80%]" />
+                <div className="h-[16px] bg-muted rounded-md animate-pulse w-[60%]" />
+            </div>
+        </div>
+    );
 
     return (
         <div id='results' className='border-b py-3'>
-            <a href={data.url.replace(/.html$/, '').replace(/\/$/, '')}>
+            <Link href={data.url.replace(/.html$/, '').replace(/\/$/, '')} onClick={onClose}>
                 <div className='flex items-center gap-3'>
                     <Image src={data.meta.image} className='bg-muted w-[150px] border rounded-md p-2' width={150} height={150} alt={data.meta.title} />
                     <p
                         dangerouslySetInnerHTML={{ __html: data.excerpt }}
                     />
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }
