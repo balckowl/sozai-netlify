@@ -6,6 +6,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import GoogleAdsense from "./components/GoogleAdsense/GoogleAdsense";
 import { ThemeProvider } from "@/libs/theme-provider";
 import { cn } from "@/libs/utils";
+import Snow from "./components/snow";
+import Banner from "./components/Banner/Banner";
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
 
@@ -33,6 +35,8 @@ export default function RootLayout({
         >
           <Header />
           <main>
+            <Banner />
+            <Snow />
             {children}
           </main>
           <Footer />
