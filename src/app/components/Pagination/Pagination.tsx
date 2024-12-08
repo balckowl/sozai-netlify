@@ -47,7 +47,7 @@ const Pagination = ({ totalCount, currentPage, limit, segment }: { totalCount: n
                 )}
                 {pageNumbers.map((page, index) =>
                     page === '...' ? (
-                        <span key={index} className="bg-muted">
+                        <span key={index}>
                             ...
                         </span>
                     ) : (
@@ -72,7 +72,7 @@ const Pagination = ({ totalCount, currentPage, limit, segment }: { totalCount: n
 
             <div className="flex justify-center items-center pb-[50px] gap-5 sm:hidden">
                 {currentPage > 1 && (
-                    <Link href={`/${segment}/${currentPage - 1}`}>
+                    <Link  href={`/${segment}/${currentPage - 1}`}>
                         <Button className="w-[45px] h-[45px] rounded-md flex justify-center items-center gap-2">
                             <ArrowLeft size={30} />
                         </Button>

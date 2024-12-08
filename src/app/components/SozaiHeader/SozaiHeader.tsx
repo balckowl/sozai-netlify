@@ -26,14 +26,16 @@ const SozaiHeader = ({ name, category, tags, id }: { name: string, category: any
                     </BreadcrumbList>
                 </Breadcrumb>
             </div>
-            <div data-pagefind-body className="flex items-center justify-between gap-2 mb-[10px]">
-                <h2 className="text-[23px] sm:text-[30px] font-bold">
-                    {name}
-                </h2>
-            </div>
-            <div className="mb-[20px] flex-col flex sm:flex-row sm:items-center gap-3">
-                <CategoryList contents={category} />
-                <TagList contents={tags} />
+            <div data-pagefind-body>
+                <div className="flex items-center justify-between gap-2 mb-[10px]">
+                    <h2 className="text-[23px] sm:text-[30px] font-bold">
+                        {name}
+                    </h2>
+                </div>
+                <div className="mb-[20px] flex-col flex sm:flex-row sm:items-center gap-3">
+                    <CategoryList contents={category} />
+                    <TagList contents={tags} />
+                </div>
             </div>
         </div>
     )
